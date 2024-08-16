@@ -6,7 +6,7 @@ def recupera_tareas_y_subtareas():
 
     totales = []
     for item in tareas:
-        sub_tareas = item.subtarea_set.all()
+        sub_tareas = item.subtarea.all()
         
         datos = {
             'tarea':item,
@@ -40,6 +40,10 @@ def elimina_sub_tarea(subtarea_id):
     subtarea.eliminada = True
     subtarea.save()
     return recupera_tareas_y_subtareas()
+
+def matar_tarea(idtarea:int):
+     t = Tarea.objects.get(id=idtarea) 
+     t.delete()
 
 def imprimir_en_pantalla():
     datos = recupera_tareas_y_subtareas()
