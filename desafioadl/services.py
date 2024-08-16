@@ -41,9 +41,9 @@ def elimina_sub_tarea(subtarea_id):
     subtarea.save()
     return recupera_tareas_y_subtareas()
 
-def matar_tarea(idtarea:int):
-     t = Tarea.objects.get(id=idtarea) 
-     t.delete()
+# #def matar_tarea(idtarea:int):
+#      t = Tarea.objects.get(id=idtarea) 
+#      t.delete()
 
 def imprimir_en_pantalla():
     datos = recupera_tareas_y_subtareas()
